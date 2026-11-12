@@ -8,7 +8,7 @@ Given a list of shopping items identified by name, calculate the total cost of t
 
 An item may appear multiple times. For example, `["Apple", "Apple", "Banana"]` represents a basket containing two apples and one banana.
 
-**Pricing rules:**
+### Pricing Rules
 
 | Product | Price | Special Offer |
 |---|---:|---|
@@ -28,9 +28,13 @@ An item may appear multiple times. For example, `["Apple", "Apple", "Banana"]` r
 7. **Lime offer:** Every group of three limes costs 30p. Any remaining limes are charged at 15p each.
 8. **Unit testing:** I wrote unit tests using xUnit to verify regular pricing, special offers, empty baskets, case-insensitive product names and invalid inputs.
 
-**Use of AI:** I used AI to create xUNIT test cases. The implementation was written by me rather than relying on AI to generate the complete solution.
+### Use of AI
 
-**Reference:** [xUnit – Getting Started](https://xunit.net/docs/getting-started/v3/getting-started#using-dotnet-test)
+I used AI to help create xUnit test cases. The implementation was written by me rather than relying on AI to generate the complete solution.
+
+### Reference
+
+- [xUnit – Getting Started](https://xunit.net/docs/getting-started/v3/getting-started#using-dotnet-test)
 
 ## Requirements
 
@@ -48,15 +52,21 @@ The project targets `net11.0`, so a compatible .NET 11 SDK is required.
 ## Project Structure
 
 ```text
-ShoppingBasket/
+shopping-basket-csharp/
 ├── ShoppingBasket/
 │   ├── Program.cs
 │   ├── ShoppingBasket.cs
 │   └── ShoppingBasket.csproj
 │
-└── ShoppingBasket.Tests/
-    ├── ShoppingBasket.Tests.cs
-    └── ShoppingBasket.Tests.csproj
+├── ShoppingBasket.Tests/
+│   ├── ShoppingBasketTests.cs
+│   └── ShoppingBasket.Tests.csproj
+│
+├── docs/
+│   └── images/
+│       └── unit-test-results.png
+│
+└── README.md
 ```
 
 ## Design
@@ -65,12 +75,29 @@ ShoppingBasket/
 - **ShoppingBasket.cs:** Contains the product price dictionary, basket validation, quantity counting and pricing calculations.
 - **ShoppingBasket.Tests:** Separate xUnit test project covering regular pricing, special offers, case-insensitive product names, empty baskets and invalid inputs.
 
+## Test Results
+
+The unit test suite completed successfully.
+
+| Result | Count |
+|---|---:|
+| Total tests | 24 |
+| Passed | 24 |
+| Failed | 0 |
+| Skipped | 0 |
+
+**Result: SUCCESS**
+
+The screenshot below shows the test execution summary:
+
+![Shopping Basket unit test results](docs/images/unit-test-results.png)
+
 ## Run Locally
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/0xfarben/shopping-basket-csharp
+git clone https://github.com/0xfarben/shopping-basket-csharp.git
 ```
 
 ### 2. Open the project directory
